@@ -2,7 +2,7 @@ import { SMTPServer } from 'smtp-server';
 import { simpleParser } from 'mailparser';
 
 const server = new SMTPServer({
-    authOptional: false,
+    authOptional: true,
     allowInsecureAuth: true,
     // onAuth: (auth, session, callback) => {
     //     callback(null, { user: 'arunshaw433@gmail.com' })
