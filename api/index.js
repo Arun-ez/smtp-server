@@ -66,9 +66,11 @@ const server = new SMTPServer({
     onData: (stream, session, callback) => {
         simpleParser(stream, (err, data) => {
             console.log({ data, err, session });
-            callback()
+            return callback()
         })
     }
 })
 
-server.listen(25, () => { console.log('Server Listening...') })
+const PORT = 587;
+
+server.listen(PORT, () => { console.log('Server Listening on port', PORT) })
