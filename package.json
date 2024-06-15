@@ -1,0 +1,17 @@
+{
+  "name": "mail_server",
+  "version": "1.0.0",
+  "main": "api/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node api/index.js",
+    "dev": "nodemon api/index.js"
+  },
+  "author": "Arun-ez",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "mailparser": "^3.7.1",
+    "smtp-server": "^3.13.4"
+  }
+}
