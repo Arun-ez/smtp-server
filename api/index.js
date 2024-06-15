@@ -40,17 +40,18 @@ const server = new SMTPServer({
             address,
         });
 
-        callback();
+
+        if (!users.has(address)) {
+            return callback(new Error("Account doesn't exist"));
+        }
+
+        return callback();
     },
 
     onRcptTo: ({ address }, _, callback) => {
 
         if (!address) {
             return callback(new Error('Address not found'));
-        }
-
-        if (!users.has(address)) {
-            return callback(new Error("Account doesn't exist"));
         }
 
         console.log({
