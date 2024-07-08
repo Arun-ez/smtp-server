@@ -10,19 +10,19 @@ const server = new SMTPServer({
     allowInsecureAuth: true,
     onAuth: (auth, session, callback) => {
 
-        if (!auth) {
-            return callback(new Error('Credentials not provided'));
-        }
+        // if (!auth) {
+        //     return callback(new Error('Credentials not provided'));
+        // }
 
-        if (!auth?.username || !auth.password) {
-            return callback(new Error('username and password are required'));
-        }
+        // if (!auth?.username || !auth.password) {
+        //     return callback(new Error('username and password are required'));
+        // }
 
-        if (!users.has(auth.username)) {
-            return callback(new Error("Account doesn't exist"));
-        }
+        // if (!users.has(auth.username)) {
+        //     return callback(new Error("Account doesn't exist"));
+        // }
 
-        return callback(null, { user: auth.username })
+        return callback(null, { user: 'arunshaw' })
     },
 
     onConnect: (session, callback) => {
@@ -71,6 +71,6 @@ const server = new SMTPServer({
     }
 })
 
-const PORT = 587;
+const PORT = 2525;
 
 server.listen(PORT, () => { console.log('Server Listening on port', PORT) })
